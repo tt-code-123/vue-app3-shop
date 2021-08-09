@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_518606_xzdcpfq0ve.css">
+    <link rel="stylesheet" href="./css/reset.css" />
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+      /* function remRefresh(){
+        // 1.获取屏幕宽度
+      let clientWith = document.documentElement.clientWidth
+      // 2.将屏幕的宽度等分: 16  10  等分的目的：1)降低单位rem值的大小便于换算 2)提交精确度
+      let rem = clientWith / 10
+      // 2.设置根节点字体的大小
+      document.documentElement.style.fontSize = rem + 'px'
+      // 3.设置body字体大小
+      document.body.style.fontSize = '16px'
+      }
+      // 页面加载显示的事件
+      window.addEventListener('pageshow',()=>{
+        remRefresh()
+      })
+      // 窗口大小改变的事件
+      let timeoutId
+      window.addEventListener('resize',()=>{
+        // 函数防抖
+        !!timeoutId && clearTimeout(timeoutId)
+        timeoutId=setTimeout(()=>{
+          remRefresh()
+        },300)
+      }) */
+    </script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script>
+      if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body);
+        }, false);
+      }
+    </script>
   </body>
 </html>
